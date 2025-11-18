@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #fafafa;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 25px;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .table {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 120px repeat(5, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+
+      .head {
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        color: #333;
+      }
+
+      .time {
+        background: #d6f4f1;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .cell {
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .pink {
+        background: #f5c8e5;
+      }
+      .yellow {
+        background: #f2e3a4;
+      }
+      .purple {
+        background: #d6c7f7;
+      }
+      .note-box {
+        max-width: 890px;
+        margin: 15px auto 0;
+        background: #d6f4f1;
+        padding: 12px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      .note-text {
+        margin-left: 60px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weekly Schedule</h1>
+
+    <div class="table">
+      <div></div>
+      <div class="head">Monday</div>
+      <div class="head">Tuesday</div>
+      <div class="head">Wednesday</div>
+      <div class="head">Thursday</div>
+      <div class="head">Friday</div>
+
+      <div class="time">08:00</div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+
+      <div class="time">09:00</div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+
+      <div class="time">10:00</div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+
+      <div class="time">11:00</div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+
+      <div class="time">12:00</div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+
+      <div class="time">13:00</div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+      <div class="cell yellow"></div>
+
+      <div class="time">15:00</div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+      <div class="cell pink"></div>
+
+      <div class="time">16:00</div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+      <div class="cell purple"></div>
+    </div>
+
+    <div class="note-box">NOTE: <span class="note-text"></span></div>
+    
+</body>
+</html>
