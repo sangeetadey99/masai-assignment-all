@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        body{
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        h2{
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .menu{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+    
+        .card{
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .top{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .name{
+            font-weight: bold;
+        }
+
+        .price{
+            font-weight: bold;
+            color: #c47a32;
+        }
+
+        .desc{
+            color: #555;
+            font-size: 14px;
+        }
+
+        @media(max-width: 900px){
+            .menu{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px){
+            .menu{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Responsive Coffee Menu</h2>
+
+    <div class="menu">
+        <div class="card">
+            <div class="top">
+                <div class="name">Cappuccino</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Coffee with milk and smooth foam.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Americano</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Simple black coffee with hot water.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Espresso</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Strong and rich concentrated coffee.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Macchiato</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Espresso topped with a small amount of milk.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Mocha</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Chocolate flavored coffee delight.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Coffee Latte</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Smooth espresso with more milk.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Piccolo Latte</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Small latte with strong flavor.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Ristretto</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Short, concentrated shot of espresso.</p>
+        </div>
+
+        <div class="card">
+            <div class="top">
+                <div class="name">Affogato</div>
+                <div class="price">$49</div>
+            </div>
+            <p class="desc">Ice cream topped with espresso.</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
