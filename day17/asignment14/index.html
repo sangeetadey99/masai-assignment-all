@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h3>Todo List</h3>
+
+    <input id="taskInput" type="text" placeholder="Enter a task" />
+    <button id="addBtn">Add</button>
+
+    <br /><br />
+
+    <input id="searchInput" type="text" placeholder="Search tasks..." />
+
+    <ul id="taskList"></ul>
+
+    <script>
+      function getTasks() {
+        const saved = localStorage.getItem("todoTasks");
+        return saved ? JSON.parse(saved) : [];
+      }
+
+      function saveTasks(tasks) {
+        localStorage.setItem("todoTasks", JSON.stringify(tasks));
+      }
+
+      function showTasks(taskArray) {
+        const list = document.getElementById("taskList");
+        list.innerHTML = "";
+
+        taskArray.forEach(function (task) {
+          const item = document.createElement("li");
+
+          const label = task.completed ? task.text + " (completed)" : task.text;
+
+          item.textContent = label;
+
+          item.addEventListener("click", function () {
+            task.completed = !task.completed;
+            saveTasks(tasks);
+            showTasks(tasks);
+          });
+
+          item.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            const index = tasks.findIndex((t) => t.id === task.id);
+            tasks.splice(index, 1);
+            saveTasks(tasks);
+            showTasks(tasks);
+          });
+
+          list.appendChild(item);
+        });
+      }
+
+      const tasks = getTasks();
+      showTasks(tasks);
+
+      document.getElementById("addBtn").addEventListener("click", function () {
+        const input = document.getElementById("taskInput");
+        const text = input.value.trim();
+
+        if (text === "") {
+          alert("Please enter a task.");
+          return;
+        }
+
+        const newTask = {
+          id: Date.now(),
+          text: text,
+          completed: false,
+        };
+
+        tasks.push(newTask);
+        saveTasks(tasks);
+        showTasks(tasks);
+
+        input.value = "";
+      });
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+
+          const filtered = tasks.filter(function (task) {
+            return task.text.toLowerCase().includes(query);
+          });
+
+          showTasks(filtered);
+        });
+    </script>
+  </body>
+</html>
